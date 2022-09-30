@@ -5,7 +5,6 @@
  */
 /**
  * Esta función recibe un numero entero positivo y lo convierte en binario
- * @author José Manuel García Isla <jose.gisla@gmail.com>
  * @param {number} numero Número que va a ser representado en binario
  * @return {number} Representación en binario del número dado
  */
@@ -26,6 +25,7 @@
     return 'El binario de ' + original + ' es ' + binario;
 }
 
+// Ejecución
 do{
     var numero = prompt('Introduce un número del 1 al 30 (0 para salir)');
     console.log(aBinario(numero));

@@ -9,7 +9,6 @@
  * Si es un numero devuelve si es mayor o menor que cero.
  * Si no es un numero da error.
  * Se repite la ejecución hasta introducir una f o F
- * @author José Manuel García Isla <jose.gisla@gmail.com>
  * @param {string | number} input - Entrada proporcionada por el usuario
  * @return {string} Cadena que indica si el numero es mayor, menor, o igual a cero, el conteo de ceros o si la entrada es invalida.
  */
