@@ -1,5 +1,7 @@
-/*
- * Tarea 1 - Números naturales.
+/**
+ * @file Tarea 1 - Ejercicio 1 del apartado B - Números naturales
+ * @author José Manuel García Isla <jose.gisla@gmail.com>
+ * @version 1.0
  */
 
 /**La función recibe una entrada, y tiene en cuenta lo siguiente:

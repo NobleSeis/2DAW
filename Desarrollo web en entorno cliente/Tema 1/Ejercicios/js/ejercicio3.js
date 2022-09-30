@@ -1,5 +1,7 @@
 /**
- * Tarea 1 - Binario
+ * @file Tarea 1 - Ejercicio 3 del apartado B - Binario
+ * @author José Manuel García Isla <jose.gisla@gmail.com>
+ * @version 1.0
  */
 /**
  * Esta función recibe un numero entero positivo y lo convierte en binario

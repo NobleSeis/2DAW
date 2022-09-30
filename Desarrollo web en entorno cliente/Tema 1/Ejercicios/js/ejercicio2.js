@@ -1,10 +1,12 @@
 /**
- * Tarea 1 - Calificaciones
+ * @file Tarea 1 - Ejercicio 2 del apartado B - Calificaciones
+ * @author José Manuel García Isla <jose.gisla@gmail.com>
+ * @version 1.0
  */
+
 /**
  * Esta función recibe una calificación del 1-10 y devuelve una cadena que representa 
  * la calificación cualitativamente.
- * @author José Manuel García Isla <jose.gisla@gmail.com>
  * @param {string} nota Nota a representar de forma cualitativa.
  * @return {string} Cadena que representa cualitativamente la nota dada o mensajes de información.
  */
