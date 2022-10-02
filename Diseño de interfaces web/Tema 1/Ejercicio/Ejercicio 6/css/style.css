@@ -8,24 +8,26 @@
 }
 body {
     display: grid;
+    grid-template-areas: 
+        'header header header'
+        'nav nav nav'
+        'main main aside'
+        'footer footer footer';
 }
 header {
     background-color: rgb(94, 94, 94);
     min-height: 10vh;
-    grid-column: 1 / span 3;
-    grid-row: 1;
+    grid-area: header;
 }
 nav {
     background-color: rgb(173, 173, 173);
     min-height: 5vh;
-    grid-column: 1/ span 3;
-    grid-row: 2;
+    grid-area: nav;
 }
 main {
     background-color: gray;
     min-height: 75vh;
-    grid-column: 1 / span 2;
-    grid-row: 3;
+    grid-area: main
 }
 section {
     min-height: 50%;
@@ -36,13 +38,10 @@ section:first-child {
 aside {
     background-color: rgb(197, 197, 197);
     min-height: 75vh;
-    grid-column: 1;
-    grid-column-start: 3;
-    grid-row: 3;
+    grid-area: aside;
 }
 footer {
     background-color: rgb(94, 94, 94);
     min-height: 10vh;
-    grid-column: 1/ span 3;
-    grid-row: 4;
+    grid-area: footer;
 }
