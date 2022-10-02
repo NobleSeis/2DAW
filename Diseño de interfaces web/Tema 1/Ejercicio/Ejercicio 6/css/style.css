@@ -1,3 +1,11 @@
+:root {
+    --primary-color: #008060;
+    --secondary-color: #759eff;
+    --alternative-color: #ffbf75;
+    --alternative-secondary-color: #f0f1f2 ;
+    --dark-color: #002e25;
+
+}
 * {
     margin: 0px;
     padding: 0px;
@@ -9,23 +17,23 @@
 body {
     display: grid;
     grid-template-areas: 
-        'header header header'
-        'nav nav nav'
-        'main main aside'
-        'footer footer footer';
+        'header header header header'
+        'nav nav nav nav'
+        'main main main aside'
+        'footer footer footer footer';
 }
 header {
-    background-color: rgb(94, 94, 94);
+    background-color: var(--dark-color);
     min-height: 10vh;
     grid-area: header;
 }
 nav {
-    background-color: rgb(173, 173, 173);
+    background-color: var(--primary-color);
     min-height: 5vh;
     grid-area: nav;
 }
 main {
-    background-color: gray;
+    background-color: var(--alternative-secondary-color);
     min-height: 75vh;
     grid-area: main
 }
@@ -33,15 +41,16 @@ section {
     min-height: 50%;
 }
 section:first-child {
-    border-bottom: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(48, 48, 48);
 }
 aside {
-    background-color: rgb(197, 197, 197);
+    background-color: var(--alternative-secondary-color);
     min-height: 75vh;
+    border-left: 2px solid rgb(48, 48, 48);
     grid-area: aside;
 }
 footer {
-    background-color: rgb(94, 94, 94);
+    background-color: var(--dark-color);
     min-height: 10vh;
     grid-area: footer;
 }
