@@ -5,38 +5,49 @@
  * @version 1.0
  */
 
-/**
- * Esta función recibe una calificación del 1-10 y devuelve una cadena que representa 
- * la calificación cualitativamente.
- * @param {string} nota Nota a representar de forma cualitativa.
- * @return {string} Cadena que representa cualitativamente la nota dada o mensajes de información.
- */
-function calificaciones ( nota ) {
-    if (nota > 10 || nota < 0) return 'La nota debe ser entre 1 y 10';
-    if (nota == 0) return 'Terminando ejecución'
-    switch (nota) {
+/*
+    Se pregunta al usuario por una entrada y se crea un bucle que se repetira
+    hasta que dicha entrada sea 0.
+
+    Dentro del bucle se comprueba la entrada y se le asigna un valor acorde a
+    una variable dependiendo del caso.
+
+    Por último se muestra ese valor y se vuelve a pedir una entrada nueva.
+*/
+
+// Declaración de variables
+let salida;
+let nota = prompt( 'Introduce la nota' );
+
+// Bucle principal
+while ( nota != 0 ) {
+
+    switch ( nota ) {
         case '1':
         case '2':
         case '3':
         case '4':
-            return 'Insuficiente';
+            salida = 'Insuficiente';
+            break;
         case '5':
-            return 'Suficiente';
+            salida = 'Suficiente';
+            break;
         case '6':
-            return 'Bien';
+            salida = 'Bien';
+            break;
         case '7':
         case '8':
-            return 'Notable';
+            salida = 'Notable';
+            break;
         case '9':
         case '10':
-            return 'Sobresaliente';
+            salida = 'Sobresaliente';
+            break;
         default:
-            return 'Error: La nota debe ser un numero';
+            salida = 'Error: La nota debe ser un numero entre 1 y 10 (ambos incluidos)';
     }
-}
 
-// Ejecución
-do {
-    var nota = prompt('Introduce la nota');
-    console.log(calificaciones(nota));
-} while (nota != 0);
+    console.log( salida );
+
+    nota = prompt( 'Introduce la nota' );
+};
