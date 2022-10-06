@@ -6,20 +6,22 @@
  */
 
 /*
-    Se pregunta al usuario por una entrada y se crea un bucle que se repetira
-    hasta que dicha entrada sea 0.
+    Se pregunta al usuario por una entrada y se crea un bucle que se repetira hasta que
+    dicha entrada sea 0.
 
-    Dentro del bucle se comprueba la entrada y se le asigna un valor acorde a
-    una variable dependiendo del caso.
+    Dentro del bucle se comprueba la entrada y se le asigna un valor acorde a una 
+    variable dependiendo del caso.
 
     Por último se muestra ese valor y se vuelve a pedir una entrada nueva.
 */
 
 // Declaración de variables
+
 let salida;
 let nota = prompt( 'Introduce la nota' );
 
 // Bucle principal
+
 while ( nota != 0 ) {
 
     switch ( nota ) {
