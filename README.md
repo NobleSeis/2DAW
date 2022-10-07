@@ -4,7 +4,7 @@ Repositorio con las actividades y documentos que voy recopilando del grado super
 
 ## Recursos 🛠️
 
-- [JSDoc][https://jsdoc.app/] - Generar documentación para JS
+- [JSDoc](https://jsdoc.app/) - Generar documentación para JS
 
 ## Licencia ©️
 
