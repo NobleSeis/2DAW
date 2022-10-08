@@ -42,9 +42,70 @@
         </div>
     </nav>
     
-    <section class="container">
-        <div style="display: flex; min-height: 50vh; align-items: center; justify-content: center;">
-            <p class="display-5 border border-dark p-5 shadow rounded">🚧 En construcción 🚧</p>
+    <section class="container mt-5">
+        <h3 class="mb-4">Instalación de XAMPP</h3>
+        <p>
+            Para instalar XAMPP en nuestro sistema, debemos dirigirnos a la siguiente 
+            <a href="https://www.apachefriends.org/es/index.html" target="_blank" rel="noopener noreferrer">web</a>
+            y descargar el paquete correspondiente al sistemas que estamos usando. Una vez hecho, empezaremos la instalación:
+        </p>
+        <div class="row">
+            <div class="container-fluid mt-4">
+                <ul class="nav nav-tabs px-5 row">
+                    <li class="nav-item col-sm-12 col-md-2">
+                        <a class="nav-link active text-dark" data-bs-toggle="tab" href="#windows">Windows</a>
+                    </li>
+                    <li class="nav-item col-sm-12 col-md-2">
+                        <a class="nav-link text-dark" data-bs-toggle="tab" href="#linux">Linux</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content my-5">
+                <!-- Instalación en windows 1 -->
+                <div class="tab-pane container active" id="windows">
+                    <p class="mb-5">Para Windows, se descarga un ejecutable que guiará la instalación de forma sencilla.</p>
+                    <img class="img-fluid mx-auto d-block" src="assets/img/windows-1.png" alt="Instalador de XAMPP">
+                    <p class="my-5">Es el típico instalador de siguiente, siguiente, que todo el mundo conoce, así que empezamos con el primer click en siguiente (next)</p>
+                    <img class="img-fluid mx-auto d-block" src="assets/img/windows-2.png" alt="Instalador de XAMPP">
+                    <p class="my-5">
+                        La siguiente pantalla tiene algo más de chicha, y nos permite decidir que componentes del stack queremos instalar. En mi caso voy a 
+                        desmarcar la opción de Perl, ya que no lo voy a usar. Sino sabes que es cada paquete, no te compliques y deja la instalación por defecto.
+                    </p>
+                    <img class="img-fluid mx-auto d-block" src="assets/img/windows-3.png" alt="Instalador de XAMPP">
+                    <p class="my-5">
+                        Es el momento de elegir la ruta de instalación, la ruta por defecto es <span class="fw-bold">C:\xampp</span> y es recomendable dejarla así.
+                        Tras esta ventana hay otra de selección de idioma, pero solo están soportados el inglés y el alemán. Ahora es el momento de iniciar la instalación
+                        como tal.
+                    </p>
+                    <img class="img-fluid mx-auto d-block" src="assets/img/windows-4.png" alt="Instalador de XAMPP">
+                    <p class="my-5">
+                        Y listo, una vez finalizada la instalación, nos preguntará si queremos iniciar el panel de control y ya tendremos disponible el stack XAMPP
+                    </p>
+                    <img class="img-fluid mx-auto d-block" src="assets/img/windows-5.png" alt="Instalador de XAMPP">
+                </div>
+
+                <!-- Instalación en linux 2 -->
+                <div class="tab-pane container fade" id="linux">
+                    <p class="mb-5">
+                        En sistemas linux, se nos descarga un script que debemos ejecutar. Pero dicho script viene sin permisos de ejecución, de modo que debemos darselo.
+                        El comando es el siguiente: <kbd>chmod +x nombreDelArchivo</kbd>
+                    </p>
+                    <img class="img-fluid mx-auto d-block" src="assets/img/linux-1.png" alt="Instalador de XAMPP">
+                    <p class="my-5">
+                        Ahora ya podemos ejecutar el script, eso si, como super usuario. El comando es el siguiente <kbd>sudo ./nombreDelArchivo</kbd>
+                        y nos aparecerá una ventana identica a la de la instalación en Windows:</p>
+                    <img class="img-fluid mx-auto d-block" src="assets/img/linux-2.png" alt="Instalador de XAMPP">
+                    <p class="my-5">
+                        Tras hacer click en siguiente, aparece una nueva ventana que nos da a escoger entre instalar solo los paquetes basicos del stack, o seleccionar 
+                        también los de desarrollo. En este caso voy a dejar seleccionados ambos.
+                    </p>
+                    <img class="img-fluid mx-auto d-block" src="assets/img/linux-3.png" alt="Instalador de XAMPP">
+                    <p class="my-5">Se nos informa que XAMPP será instalado en la ruta <span class="fw-bold">/opt/lampp</span> y empezará la instalación</p>
+                    <img class="img-fluid mx-auto d-block" src="assets/img/linux-4.png" alt="Instalador de XAMPP">
+                    <p class="my-5">Y listo, una vez se completa la instalación podemos abrir el panel de control de XAMPP</p>
+                    <img class="img-fluid mx-auto d-block" src="assets/img/linux-5.png" alt="Instalador de XAMPP">
+                </div>
+            </div>
         </div>
     </section>
 
