@@ -1,3 +1,4 @@
+"use strict";
 /**
  * @file Tarea 1 - Ejercicio 2 del apartado B - Calificaciones
  * @author José Manuel García Isla <jose.gisla@gmail.com>
@@ -15,24 +16,40 @@
     Por último se muestra ese valor y se vuelve a pedir una entrada nueva.
 */
 
+// Declaración de constantes
+const MENSAJE = `Introduce la nota`;
+const ERROR = `Error: La nota debe ser un numero entre 1 y 10 (ambos incluidos)`;
+
 // Declaración de variables
 
 let salida;
-let nota = prompt( 'Introduce la nota' );
+let nota;
+let error;
 
 // Bucle principal
+do {
 
-while ( nota != 0 ) {
-
+    // De haber un error se lanza un prompt con el error y se vuelve a pedir una entrada
+    if ( error ) {
+        nota = prompt( `${ ERROR }\n${ MENSAJE }` );
+    } 
+    // Si todo está correcto se muestra la salida y se vuelve a pedir una entrada sin aviso de error
+    else {
+        nota = prompt( MENSAJE );
+    }
+    
+    error = false;                              // Reseteando la bandera
+    salida = '';                                // Reseteando la salida para evitar errores al terminar el programa despues de introducir una nota válida
+    
     switch ( nota ) {
         case '1':
         case '2':
         case '3':
         case '4':
-            salida = 'Insuficiente';
+            salida = 'Insuficiente';            // Casos del 1 al 4...
             break;
         case '5':
-            salida = 'Suficiente';
+            salida = 'Suficiente';             
             break;
         case '6':
             salida = 'Bien';
@@ -46,10 +63,9 @@ while ( nota != 0 ) {
             salida = 'Sobresaliente';
             break;
         default:
-            salida = 'Error: La nota debe ser un numero entre 1 y 10 (ambos incluidos)';
+            error = true;                       // Si la entrada no es válida error
     }
 
-    console.log( salida );
+    salida ? console.log( `${ nota } -> ${ salida }` ) : '';        // Evitando undefined si salimos en la primera iteración
 
-    nota = prompt( 'Introduce la nota' );
-};
+} while ( parseInt( nota ) !== 0 );                                 // Salimos al introducir 0
