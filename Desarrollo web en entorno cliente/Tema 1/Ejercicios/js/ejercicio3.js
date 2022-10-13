@@ -38,7 +38,7 @@ let entrada = prompt( MENSAJE );
 
 // Bucle principal
 
-while ( entrada != FIN ) {  // Hasta que la entrada sea 0 en este caso
+while ( parseInt( entrada ) !== FIN ) {  // Hasta que la entrada sea 0 en este caso
 
     if ( ( entrada << 0 ) < MIN || ( entrada << 0 ) > MAX ) entrada = prompt( ERROR ); // Se vuelve a pedir la entrada si la anterior no era un número o estaba fuera de rango
 
