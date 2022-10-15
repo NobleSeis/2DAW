@@ -11,8 +11,8 @@
   </head>
   <body class="d-flex flex-column min-vh-100">
     <header class="container-fluid p-5 bg-dark text-white">
-        <h1 class="display-3">Primeros pasos con PHP.</h1>
-        <p class="display-6">Desarrollo Web en Entorno Servidor.</p>
+        <h1 class="display-3">Primeros pasos con PHP</h1>
+        <p class="display-6">Desarrollo Web en Entorno Servidor</p>
     </header>
     <nav class="navbar navbar-expand-sm bg-warning text-dark sticky-top">
         <div class="container-fluid">
@@ -28,8 +28,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../2/actividad2.html">Actividad 2</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Actividad 3</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-decoration-underline" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Actividad 3
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Actividad 3</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="a/apartadoa.html">Apartado A</a></li>
+                        <li><a class="dropdown-item" href="b/apartadob.html">Apartado B</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../4/actividad4.html">Actividad 4</a>
@@ -41,9 +49,35 @@
             </div>
         </div>
     </nav>
-    <section class="container">
+    <section class="container p-5">
+        <h3 class="text-center">La actividad 3 se divide en dos apartados</h3>
         <div style="display: flex; min-height: 50vh; align-items: center; justify-content: center;">
-            <p class="display-5 border border-dark p-5 shadow rounded">🚧 En construcción 🚧</p>
+            <div class="card-group">
+                <div class="card bg-dark text-white p-4 m-3 text-center rounded col-md-12">
+                    <h3 class="card-header text-dark bg-warning rounded">Apartado A</h3>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Recolección y validación de un formulario.
+                        </p>
+                        <p class="display-1">✔️</p>
+                    </div>
+                    <div class="card-footer bg-dark d-grid">
+                        <a href="a/apartadoa.html" class="btn btn-success">Ver apartado</a>
+                    </div>
+                </div>
+                <div class="card bg-dark text-white p-4 m-3 text-center rounded col-md-12">
+                    <h3 class="card-header text-dark bg-warning rounded">Apartado B</h3>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Generador de curriculum a partir de formulario.
+                        </p>
+                        <p class="display-1">📄</p>
+                    </div>
+                    <div class="card-footer bg-dark d-grid">
+                        <a href="b/apartadob.html" class="btn btn-success">Ver apartado</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <footer class="container-fluid text-center text-white bg-dark p-5 mt-auto">

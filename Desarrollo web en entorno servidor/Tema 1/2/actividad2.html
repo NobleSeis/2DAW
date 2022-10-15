@@ -11,8 +11,8 @@
   </head>
   <body class="d-flex flex-column min-vh-100">
     <header class="container-fluid p-5 bg-dark text-white">
-        <h1 class="display-3">Primeros pasos con PHP.</h1>
-        <p class="display-6">Desarrollo Web en Entorno Servidor.</p>
+        <h1 class="display-3">Primeros pasos con PHP</h1>
+        <p class="display-6">Desarrollo Web en Entorno Servidor</p>
     </header>
     <nav class="navbar navbar-expand-sm bg-warning text-dark sticky-top">
         <div class="container-fluid">
@@ -26,10 +26,18 @@
                         <a class="nav-link" href="../1/actividad1.html">Actividad 1</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Actividad 2</a>
+                        <a class="nav-link active text-decoration-underline" href="#">Actividad 2</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../3/actividad3.html">Actividad 3</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="../3/actividad3.html" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Actividad 3
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="../3/actividad3.html">Actividad 3</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../3/a/apartadoa.html">Apartado A</a></li>
+                            <li><a class="dropdown-item" href="../3/b/apartadob.html">Apartado B</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../4/actividad4.html">Actividad 4</a>
@@ -42,7 +50,7 @@
         </div>
     </nav>
     
-    <section class="container mt-5">
+    <section class="container my-5">
         <h3 class="mb-4">Instalación de XAMPP</h3>
         <p>
             Para instalar XAMPP en nuestro sistema, debemos dirigirnos a la siguiente 
