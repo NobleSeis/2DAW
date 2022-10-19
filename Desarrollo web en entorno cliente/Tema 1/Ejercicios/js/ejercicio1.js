@@ -21,44 +21,46 @@
 
 // Declaración de constantes
 
-const FIN_1 = 'f';
-const FIN_2 = 'F';
-const MENSAJE = `Introduzca un número (${ FIN_1 } o ${ FIN_2 } para salir)`;
-const ERROR = `ERROR: La entrada debe ser un número o ${ FIN_1 }|${ FIN_2 }`;
+const FIN_1 = "f";
+const FIN_2 = "F";
+const MENSAJE = `Introduzca un número (${FIN_1} o ${FIN_2} para salir)`;
+const ERROR = `ERROR: La entrada debe ser un número o ${FIN_1}|${FIN_2}`;
 
 // Declaración de variables
 let ceros = 0;
-let entrada;
-let error; 
+let entrada = prompt(MENSAJE);
+let error;
 
 // Inicio del bucle principal
-do {
+while (entrada != FIN_1 && entrada != FIN_2) {
+  // Fin de programa con f o F en este caso
 
-    let salida;      
-          
-    // De haber un error se lanza un prompt con el error y se vuelve a pedir una entrada sino se lanza un prompt sin error
-    error ? entrada = prompt( `${ ERROR }\n${ MENSAJE }` ) : entrada = prompt( MENSAJE );
+  let salida;
 
-    error = false;      // resetear la bandera para poder lanzar el prompt correcto
+  // Comprobaciones de mayor, menor o igual a cero
+  if (entrada > 0) {
+    salida = entrada + " es mayor que 0";
+  } else if (entrada < 0) {
+    salida = entrada + " es menor que 0";
+  } else if (parseInt(entrada) === 0) {
+    ceros++;
+  }
 
-    // Comprobaciones de mayor, menor o igual a cero
-    if ( entrada > 0 ) {
-        salida = entrada + ' es mayor que 0';
-    } 
-    else if ( entrada < 0 ) {
-        salida = entrada + ' es menor que 0';
-    } 
-    else if ( parseInt( entrada ) === 0 ){
-        ceros++;
-    } 
-    
-    // Si la entrada no es válida activar la bandera
-    else {
-        error = true;
-    }
+  // Si la entrada no es válida activar la bandera
+  else {
+    error = true;
+  }
 
-    salida ? console.log( salida ) : '';                                // Evitando undefined si salimos en la primera iteración
+  salida ? console.log(salida) : ""; // Evitando undefined si salimos en la primera iteración
 
-} while ( entrada != FIN_1 && entrada != FIN_2 );                       // Fin de programa con f o F en este caso
+  // De haber un error se lanza un prompt con el error y se vuelve a pedir una entrada sino se lanza un prompt sin error
+  if (error) {
+    entrada = prompt(`${ERROR}\n${MENSAJE}`);
+  } else {
+    entrada = prompt(MENSAJE);
+  }
 
-console.log( 'El nº de ceros introducidos ha sido ' + ceros );          // Mostrando el conteo de ceros
+  error = false; // resetear la bandera para poder lanzar el prompt correcto
+}
+
+console.log("El nº de ceros introducidos ha sido " + ceros); // Mostrando el conteo de ceros

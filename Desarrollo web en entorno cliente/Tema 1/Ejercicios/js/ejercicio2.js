@@ -17,55 +17,65 @@
 */
 
 // Declaración de constantes
+const FIN = 0;
+const MIN = 1;
+const MAX = 10;
 const MENSAJE = `Introduce la nota`;
-const ERROR = `Error: La nota debe ser un numero entre 1 y 10 (ambos incluidos)`;
+const ERROR = `Error: La nota debe ser un numero entre ${MIN} y ${MAX} (o 0 para salir)\n${MENSAJE}`;
 
 // Declaración de variables
 
 let salida;
-let nota;
 let error;
+let nota = prompt(MENSAJE);
 
-// Bucle principal
-do {
+// Pidiendo la nota hasta que sea válida
+while (
+  !(parseInt(nota) < Infinity) || // NaN < Infinity == false
+  parseInt(nota) < FIN ||
+  parseInt(nota) > MAX
+) {
+  nota = prompt(`${ERROR}`);
+}
 
-    // De haber un error se lanza un prompt con el error y se vuelve a pedir una entrada
-    if ( error ) {
-        nota = prompt( `${ ERROR }\n${ MENSAJE }` );
-    } 
-    // Si todo está correcto se muestra la salida y se vuelve a pedir una entrada sin aviso de error
-    else {
-        nota = prompt( MENSAJE );
-    }
-    
-    error = false;                              // Reseteando la bandera
-    salida = '';                                // Reseteando la salida para evitar errores al terminar el programa despues de introducir una nota válida
-    
-    switch ( nota ) {
-        case '1':
-        case '2':
-        case '3':
-        case '4':
-            salida = 'Insuficiente';            // Casos del 1 al 4...
-            break;
-        case '5':
-            salida = 'Suficiente';             
-            break;
-        case '6':
-            salida = 'Bien';
-            break;
-        case '7':
-        case '8':
-            salida = 'Notable';
-            break;
-        case '9':
-        case '10':
-            salida = 'Sobresaliente';
-            break;
-        default:
-            error = true;                       // Si la entrada no es válida error
-    }
+// Bucle principal - salimos al introducir 0
+while (parseInt(nota) !== FIN) {
+  error = false; // Reseteando la bandera
+  salida = ""; // Reseteando la salida para evitar errores al terminar el programa despues de introducir una nota válida
 
-    salida ? console.log( `${ nota } -> ${ salida }` ) : '';        // Evitando undefined si salimos en la primera iteración
+  switch (nota) {
+    case "1":
+    case "2":
+    case "3":
+    case "4":
+      salida = "Insuficiente"; // Casos del 1 al 4...
+      break;
+    case "5":
+      salida = "Suficiente";
+      break;
+    case "6":
+      salida = "Bien";
+      break;
+    case "7":
+    case "8":
+      salida = "Notable";
+      break;
+    case "9":
+    case "10":
+      salida = "Sobresaliente";
+      break;
+  }
 
-} while ( parseInt( nota ) !== 0 );                                 // Salimos al introducir 0
+  console.log(`${nota} -> ${salida}`); // Mostrando el resultado
+
+  nota = prompt(MENSAJE);
+
+  // De no ser válida la entrada, se lanza un prompt con el error y se vuelve a pedir hasta que sea válida
+  while (
+    !(parseInt(nota) < Infinity) ||
+    parseInt(nota) < FIN ||
+    parseInt(nota) > MAX
+  ) {
+    nota = prompt(`${ERROR}`);
+  }
+}
