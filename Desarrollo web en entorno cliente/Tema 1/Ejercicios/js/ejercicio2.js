@@ -40,9 +40,6 @@ while (
 
 // Bucle principal - salimos al introducir 0
 while (parseInt(nota) !== FIN) {
-  error = false; // Reseteando la bandera
-  salida = ""; // Reseteando la salida para evitar errores al terminar el programa despues de introducir una nota válida
-
   switch (nota) {
     case "1":
     case "2":
