@@ -24,7 +24,7 @@
 const FIN_1 = "f";
 const FIN_2 = "F";
 const MENSAJE = `Introduzca un número (${FIN_1} o ${FIN_2} para salir)`;
-const ERROR = `ERROR: La entrada debe ser un número o ${FIN_1}|${FIN_2}`;
+const ERROR = `ERROR: La entrada debe ser un número o ${FIN_1}|${FIN_2}\n${MENSAJE}`;
 
 // Declaración de variables
 let ceros = 0;
