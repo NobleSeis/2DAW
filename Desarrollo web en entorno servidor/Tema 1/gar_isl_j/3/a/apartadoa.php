@@ -14,9 +14,6 @@
         <div class="card-header p-4 bg-warning">
           <h5 class="card-title display-3">Formulario</h5>
           <p class="card-text">Rellene los campos y pulse enviar</p>
-          <div class="alert alert-primary" role="alert">
-            Aclaraciones: ninguno de los campos del siguiente formulario acepta tildes o caracteres no ingleses
-          </div>
         </div>
         <div class="card-body px-4">
           <form action="usuario.php" method="post">
@@ -33,7 +30,7 @@
             </div>
 
             <div class="my-4">
-              <input type="url" class="form-control" name="web" placeholder="Sitio web personal (opcional)">
+              <input type="url" class="form-control" name="url" placeholder="Sitio web personal (opcional)">
             </div>
 
             <div class="my-4">

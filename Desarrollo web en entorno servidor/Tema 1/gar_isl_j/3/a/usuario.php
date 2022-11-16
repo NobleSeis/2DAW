@@ -1,46 +1,7 @@
 <?php
+// Funcion de validacion
+require('../../helpers/validate.php');
 
-// Funcion que valida los datos
-function validate($array)
-{
-    $salida = [];
-    foreach ($array as $key => $value) {
-        switch ($key) {
-            case 'nombre':
-                $salida['nombre'] = filter_var(
-                    $value,
-                    FILTER_VALIDATE_REGEXP,
-                    array("options" => array("regexp" => "/^([a-zA-Z]\s*)+$/"))
-                );
-                break;
-            case 'email':
-                $salida['email'] = filter_var($value, FILTER_VALIDATE_EMAIL);
-                break;
-            case 'telefono':
-                if (!empty($value)) {
-                    $salida['telefono'] = filter_var(
-                        $value,
-                        FILTER_VALIDATE_REGEXP,
-                        array("options" => array("regexp" => "/^\d{9}$/"))
-                    );
-                }
-                break;
-            case 'web':
-                if (!empty($value)) {
-                    $salida['web'] = filter_var($value, FILTER_VALIDATE_URL);
-                }
-                break;
-            case 'consulta':
-                $salida['consulta'] = filter_var(
-                    $value,
-                    FILTER_VALIDATE_REGEXP,
-                    array("options" => array("regexp" => "/^(\w+\s*)+$/"))
-                );
-                break;
-        }
-    }
-    return $salida;
-}
 $datosValidos = validate($_POST);
 ?>
 <?php require('../../templates/header.php'); ?>
