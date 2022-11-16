@@ -5,14 +5,14 @@
         <li class="breadcrumb-item active">Actividad 4</li>
     </ol>
 </nav>
-<h3 class="text-center">La actividad 4 se divide en tres apartados</h3>
-<div style="display: flex; min-height: 50vh; align-items: center; justify-content: center;">
+<h3 class="text-center mb-3">La actividad 4 se divide en tres apartados</h3>
+<div style="display: flex; justify-content: center;">
     <div class="card-group">
         <div class="card bg-dark text-white p-4 m-3 text-center rounded col-md-12">
             <h3 class="card-header text-dark bg-warning rounded">Apartado A</h3>
             <div class="card-body">
                 <p class="card-text">
-                    Piedra Pale Tijeras Largarto Spock
+                    Piedra Papel Tijeras Largarto Spock
                 </p>
                 <p class="display-1">🖖🏼</p>
             </div>
