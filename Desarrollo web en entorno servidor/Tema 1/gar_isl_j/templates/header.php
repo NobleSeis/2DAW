@@ -11,6 +11,8 @@
   <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <!-- Game -->
   <style>
     /* HIDE RADIO */
