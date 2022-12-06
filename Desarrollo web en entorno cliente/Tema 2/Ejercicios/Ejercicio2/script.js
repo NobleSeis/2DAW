@@ -1,20 +1,35 @@
 "use strict";
 
-let date = prompt("Introduce tu fecha de nacimiento (dd-mm-aaaa)");
+// Fecha de nacimiento del usuario
+const date = prompt("Ingresa tu fecha de nacimiento (mm-dd-aaaa)");
 
-while (!Date.parse(date)) {
-  date = prompt("Introduce tu fecha de nacimiento");
+const nacimiento = new Date(date)
+
+// Fecha actual
+const hoy = new Date();
+
+// Edad
+let edad = hoy.getFullYear() - nacimiento.getFullYear();
+
+let diasRestantes;
+
+// Ya ha pasado el cumpleaños
+if (hoy.getMonth() > nacimiento.getMonth()) {
+  const proximoCumple = new Date(hoy.getFullYear(), nacimiento.getMonth(), nacimiento.getDate());
+  diasRestantes = Math.ceil((proximoCumple - hoy) / (1000 * 60 * 60 * 24));
+  diasRestantes += 365;
+
+// Aun no ha pasado el cumpleaños
+} else {
+  const proximoCumple = new Date(hoy.getFullYear(), nacimiento.getMonth(), nacimiento.getDate());
+  diasRestantes = Math.ceil((proximoCumple - hoy) / (1000 * 60 * 60 * 24));
+  edad -= 1;
 }
 
-// Mostrando edad TODO
-console.log(new Date(Date.now()).getFullYear() - new Date(date).getFullYear());
 
-// Dias hasta su proximo cumpleaños
-if (
-  new Date(date).getFullYear() +
-    (new Date(Date.now()).getFullYear() - new Date(date).getFullYear()) >
-  new Date(Date.now()).getFullYear()
-) {
-  let dif = new Date(Date.now()).getTime() - new Date(date).getTime();
-  console.log(Math.floor(dif / (1000 * 60 * 60 * 24)));
+// Imprime la edad y la cantidad de días que faltan para el próximo cumpleaños del usuario
+if (salida){
+  console.log(salida);
+} else {
+  console.log(`Tienes ${edad} años y faltan ${diasRestantes} días para tu próximo cumpleaños.`);
 }
