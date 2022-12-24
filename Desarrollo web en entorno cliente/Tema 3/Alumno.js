@@ -1,6 +1,6 @@
 "use strict";
 
-import { Persona } from "./Persona";
+import { Persona } from "./Persona.js";
 
 // Clase principal
 export class Alumno extends Persona {

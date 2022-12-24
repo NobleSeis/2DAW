@@ -1,7 +1,7 @@
 "use strict";
 
 // Importaciones
-import { Persona } from "./Persona";
+import { Persona } from "./Persona.js";
 
 // Reglas de especialidad
 const RULES = ["informática", "mecánica", "electrónica", "cocina", "madera"];
