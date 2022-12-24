@@ -48,7 +48,7 @@ export class Persona {
     ) {
       throw "Error: La fecha debe estar comprendida entre el 01 enero 1963 y el 31 Diciembre 2022";
     }
-    this.#fechaNac = fechaNac;
+    this.#fechaNac = new Date(fechaNac);
   }
 
   // Métodos
