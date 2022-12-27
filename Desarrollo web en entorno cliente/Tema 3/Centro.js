@@ -1,3 +1,6 @@
+import { Grupo } from "./Grupo.js";
+import { Profesor } from "./Profesor.js";
+
 export class Centro {
   #nombre;
   #ciudad;
@@ -53,18 +56,36 @@ export class Centro {
 
   // Métodos
   addComunidad(item) {
-    if (item.hasOwnProperty(nomGrupo)) {
+    if (item instanceof Grupo) {
       this.#aComunidad[0].push(item);
     }
 
-    if (item.hasOwnProperty(especialidad)) {
+    if (item instanceof Profesor) {
       this.#aComunidad[1].push(item);
     }
   }
 
   toString() {
-    return `Nombre del centro: ${this.#nombre}, 
-    Ciudad del centro: ${this.#ciudad}, 
-    Comunidad del centro: ${this.#aComunidad}`;
+    return `
+    <table border=1>
+      <tr>
+        <th>Nombre del centro</th> 
+        <td>${this.#nombre}</td>
+      </tr>
+      <tr>
+        <th>Ciudad del centro</th>
+        <td>${this.#ciudad}</td>
+      </tr>
+      <tr>
+        <th>Grupos</th>
+        <td>
+          ${this.#aComunidad[0]}
+        </td>
+      </tr>
+      <tr>
+        <th>Profesores</th>
+        <td>${this.#aComunidad[1]}</td>
+      </tr>
+    </table>`;
   }
 }

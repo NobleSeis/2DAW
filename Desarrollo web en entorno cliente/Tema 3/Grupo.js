@@ -12,7 +12,7 @@ export class Grupo {
     if (typeof nomGrupo != "string" || nomGrupo.trim() === "") {
       throw "Error: nombre de grupo no válido";
     }
-    if (typeof grupo != "string" || grupo.length() > 4) {
+    if (typeof grupo != "string" || grupo.length > 4) {
       throw "Error: abreviatura de grupo no válida";
     }
     if (isNaN(nAlumnos) || nAlumnos < 20 || nAlumnos > 30) {
@@ -70,15 +70,19 @@ export class Grupo {
   }
 
   set aAlumnos(aAlumnos) {
-    if (!Array.isArray(aAlumnos) || aAlumnos.length() > 30) {
+    if (!Array.isArray(aAlumnos) || aAlumnos.length > 30) {
       throw "Error: array de alumnos no válido";
     }
+
+    this.#aAlumnos = aAlumnos;
   }
 
   // Métodos
   altaAlumno(alumno) {
     // Sino existe el alumno en el array lo añade
-    if (this.#aAlumnos.findIndex(alumno) !== -1) {
+    if (
+      this.#aAlumnos.findIndex((item) => item.nomApe === alumno.nomApe) !== -1
+    ) {
       return false;
     } else {
       this.#aAlumnos.push(alumno);
@@ -113,6 +117,20 @@ export class Grupo {
   }
 
   toString() {
-    return `Grupo: ${this.nomGrupo} - ${this.grupo}, Nº de alumnos: ${this.nAlumnos}, Alumnos: ${this.aAlumnos}`;
+    return `
+    <table border=1>
+    <tr>
+      <th>Grupo</th>
+      <td>${this.nomGrupo} - ${this.grupo}</td>
+    </tr>
+    <tr>
+      <th>Nº de alumnos</th>
+      <td>${this.nAlumnos} </td>
+    </tr>
+    <tr>
+      <th>Alumnos</th>
+      <td>${this.aAlumnos}</td>
+    </tr>
+    </table>`;
   }
 }

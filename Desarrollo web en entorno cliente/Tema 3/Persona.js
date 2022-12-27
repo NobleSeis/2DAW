@@ -14,6 +14,7 @@ export class Persona {
     }
 
     if (
+      new Date(fechaNac) == "Invalid Date" ||
       fechaNac < new Date("1963-01-01") ||
       fechaNac > new Date("2022-12-31")
     ) {
@@ -21,7 +22,7 @@ export class Persona {
     }
 
     // Asignando valores
-    this.#fechaNac = fechaNac;
+    this.#fechaNac = new Date(fechaNac);
     this.#nomApe = nomApe;
   }
 
@@ -53,6 +54,18 @@ export class Persona {
 
   // Métodos
   toString() {
-    return `Nombre y apellidos: ${this.nomApe}, fecha de nacimiento: ${this.fechaNac}`;
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+    return `
+      <th>Nombre y apellidos</th>
+      <td>${this.nomApe}</td>
+    </tr>
+    <tr>
+      <th>Fecha de nacimiento</th>
+      <td>${this.fechaNac.toLocaleDateString("es-ES", options)}</td>`;
   }
 }

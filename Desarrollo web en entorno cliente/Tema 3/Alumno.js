@@ -14,7 +14,7 @@ export class Alumno extends Persona {
     try {
       super(nomApe, fechaNac);
     } catch (error) {
-      console.log(error);
+      throw error;
     }
 
     // Comprobando el año de matriculación
@@ -25,7 +25,7 @@ export class Alumno extends Persona {
     // Asignando valores
     this.#anioMatriculado = anioMatriculado;
     this.#foto =
-      typeof foto !== "string" || foto.test(/^.+\.(jpg|png)$/)
+      typeof foto !== "string" || /^.+\.(jpg|png)$/.test(foto)
         ? foto
         : "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-PNG-Image-File.png";
   }
@@ -54,8 +54,17 @@ export class Alumno extends Persona {
 
   // Métodos
   toString() {
-    return `${super.toString()}, Año de matricula: ${
-      this.anioMatriculado
-    }, foto: ${this.foto}`;
+    return `
+    <table border=1>
+    <tr>${super.toString()}</tr>
+    <tr>
+      <th>Año de matricula</th>
+      <td>${this.anioMatriculado}</td>
+    </tr>
+    <tr>
+      <th>Foto</th>
+      <td><img src="${this.foto}"></td>
+    </tr>
+    </table>`;
   }
 }

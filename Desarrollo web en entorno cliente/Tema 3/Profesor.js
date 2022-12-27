@@ -4,7 +4,13 @@
 import { Persona } from "./Persona.js";
 
 // Reglas de especialidad
-const RULES = ["informática", "mecánica", "electrónica", "cocina", "madera"];
+export const especialidades = [
+  "informática",
+  "mecánica",
+  "electrónica",
+  "cocina",
+  "madera",
+];
 
 // Clase
 export class Profesor extends Persona {
@@ -16,17 +22,11 @@ export class Profesor extends Persona {
     try {
       super(nomApe, fechaNac);
     } catch (error) {
-      console.log(error);
+      throw error;
     }
 
-    this.especialidad(especialidad);
-    this.antiguedad(antiguedad);
-
     //Lanzando errores
-    if (
-      typeof especialidad !== "string" ||
-      RULES.find(especialidad.toLowerCase()) === undefined
-    ) {
+    if (!especialidades.find((rule) => rule == especialidad.toLowerCase())) {
       throw "Error: Especialidad no válida";
     }
     if (isNaN(antiguedad)) {
@@ -51,7 +51,7 @@ export class Profesor extends Persona {
   set especialidad(especialidad) {
     if (
       typeof especialidad !== "string" ||
-      RULES.find(especialidad.toLowerCase()) === undefined
+      especialidades.find(especialidad.toLowerCase()) === undefined
     ) {
       throw "Error: Especialidad no válida";
     }
@@ -67,8 +67,17 @@ export class Profesor extends Persona {
 
   // Métodos
   toString() {
-    return `${super.toString()}, Especialidad: ${
-      this.especialidad
-    }, Antigüedad: ${this.antiguedad}`;
+    return `
+    <table border=1>
+    <tr>${super.toString()}</tr>
+    <tr>
+      <th>Especialidad</th>
+      <td>${this.especialidad}</td>
+    </tr>
+    <tr>
+      <th>Antigüedad</th>
+      <td> ${this.antiguedad}</td>
+    </tr>
+    </table>`;
   }
 }
