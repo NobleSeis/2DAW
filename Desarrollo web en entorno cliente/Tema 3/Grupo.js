@@ -1,7 +1,7 @@
 "use strict";
 /**@module Grupo */
 
-import { Alumno } from "./Alumno";
+import { Alumno } from "./Alumno.js";
 
 /**
  * @class Clase que representa un grupo de alumnos
