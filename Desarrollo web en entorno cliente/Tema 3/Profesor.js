@@ -1,9 +1,8 @@
 "use strict";
-
-// Importaciones
+/**@module Profesor */
 import { Persona } from "./Persona.js";
 
-// Reglas de especialidad
+// Especialidades
 export const especialidades = [
   "informática",
   "mecánica",
@@ -12,11 +11,34 @@ export const especialidades = [
   "madera",
 ];
 
-// Clase
+/**
+ * @class Clase que representa un profesor
+ * @extends Persona
+ * @public
+ */
 export class Profesor extends Persona {
+  /**
+   * Especialidad del profesor
+   * @type {string}
+   * @private
+   */
   #especialidad;
+
+  /**
+   * Tiempo (en años) que lleva el profesor como profesor
+   * @type {string}
+   * @private
+   */
   #antiguedad;
 
+  /**
+   * @constructor
+   * @param {string} nomApe Nombre del profesor
+   * @param {string} fechaNac Fecha de nacimiento del profesor en formato mm/dd/yyyy
+   * @param {string} especialidad Especialidad del profesor, debe estar en la lista de especialidades
+   * @param {number} antiguedad Tiempo (en años) que lleva el profesor ejerciendo
+   * @throws {string} Si los parámetros pasados al constructor no son válidos.
+   */
   constructor(nomApe, fechaNac, especialidad, antiguedad) {
     // Usando el constructor de la clase padre
     try {
@@ -38,16 +60,31 @@ export class Profesor extends Persona {
     this.#especialidad = especialidad;
   }
 
-  // Getters
+  /**
+   * Getter de especialidad
+   * @function
+   * @returns {string} Especialidad del profesor
+   */
   get especialidad() {
     return this.#especialidad;
   }
 
+  /**
+   * Getter de antigüedad
+   * @function
+   * @returns {number} Años que lleva el profesor ejerciendo
+   */
   get antiguedad() {
     return this.#antiguedad;
   }
 
-  // Setters
+  /**
+   * Setter para especialidad
+   * @function
+   * @param {string} especialidad Especialidad del profesor
+   * @throws {string} Si la especialidad no está en la lista de especialidades
+   * @returns {void}
+   */
   set especialidad(especialidad) {
     if (
       typeof especialidad !== "string" ||
@@ -58,6 +95,13 @@ export class Profesor extends Persona {
     this.#especialidad = especialidad;
   }
 
+  /**
+   * Setter para antigüedad
+   * @function
+   * @param {number} antiguedad Años que lleva el profesor ejerciendo
+   * @throws {string} Si la antigüedad no es un número
+   * @returns {void}
+   */
   set antiguedad(antiguedad) {
     if (isNaN(antiguedad)) {
       throw "Error: Antiguedad debe ser un número";
@@ -65,7 +109,10 @@ export class Profesor extends Persona {
     this.#antiguedad = antiguedad > 0 && antiguedad < 36 ? antiguedad : 35;
   }
 
-  // Métodos
+  /**
+   * Método que transforma los datos de la clase a un formato presentable
+   * @returns {string} Tabla html
+   */
   toString() {
     return `
     <table border=1>

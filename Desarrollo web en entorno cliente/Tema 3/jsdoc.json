@@ -1,0 +1,12 @@
+{
+    "plugins": [],
+    "source": {
+        "include": ["./"],
+        "includePattern": ".js$",
+        "excludePattern": "out"
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    }
+}

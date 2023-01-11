@@ -1,14 +1,35 @@
 "use strict";
-
+/**@module Alumno */
 import { Persona } from "./Persona.js";
 
-// Clase principal
+/**
+ * @class Clase que representa un centro educativo.
+ * @extends Persona
+ * @public
+ */
 export class Alumno extends Persona {
-  // Propiedades
+  /**
+   * Año en el que se matriculó el alumno
+   * @type {number}
+   * @private
+   */
   #anioMatriculado;
+
+  /**
+   * Foto de perfil del alumno
+   * @type {string}
+   * @private
+   */
   #foto;
 
-  // Constructor
+  /**
+   * @constructor
+   * @param {string} nomApe Nombre del alumno
+   * @param {string} fechaNac Año de nacimiento del alumno
+   * @param {number} anioMatriculado Año de matriculación del alumno
+   * @param {string} foto Foto de perfil del alumno
+   * @throws {string} Si los parámetros pasados al constructor no son válidos.
+   */
   constructor(nomApe, fechaNac, anioMatriculado, foto) {
     // Llamando al constructor del padre
     try {
@@ -30,21 +51,45 @@ export class Alumno extends Persona {
         : "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-PNG-Image-File.png";
   }
 
-  // Getters
+  /**
+   * Getter de anioMatriculado
+   * @function
+   * @returns {number} Año de matriculación del alumno
+   */
   get anioMatriculado() {
     return this.#anioMatriculado;
   }
+
+  /**
+   * Getter de foto
+   * @function
+   * @returns {string} URL con la foto de perfil del alumno
+   */
   get foto() {
     return this.#foto;
   }
 
-  // Setters
+  /**
+   * Setter para anioMatriculado
+   * @function
+   * @param {number} anioMatriculado Año de matriculación del alumno
+   * @throws {string} Si el año no es un número o es mayor a 2022
+   * @returns {void}
+   */
   set anioMatriculado(anioMatriculado) {
     if (isNaN(anioMatriculado) || anioMatriculado > 2022) {
       throw "Error: El año de matricula no es válido";
     }
     this.#anioMatriculado = anioMatriculado;
   }
+
+  /**
+   * Setter para foto
+   * @function
+   * @param {string} foto URL con la foto del alumno
+   * @throws {string} Si la foto no es una cadena válida
+   * @returns {void}
+   */
   set foto(foto) {
     this.#foto =
       typeof foto !== "string" || foto.test(/^.+\.(jpg|png)$/)
@@ -52,7 +97,10 @@ export class Alumno extends Persona {
         : "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-PNG-Image-File.png";
   }
 
-  // Métodos
+  /**
+   * Método que transforma los datos de la clase a un formato presentable
+   * @returns {string} Tabla html
+   */
   toString() {
     return `
     <table border=1>

@@ -1,5 +1,9 @@
 "use strict";
 
+/**
+ * @module Index
+ */
+
 // Importaciones
 import { Alumno } from "./Alumno.js";
 import { Centro } from "./Centro.js";
@@ -7,19 +11,45 @@ import { Grupo } from "./Grupo.js";
 import { Profesor, especialidades } from "./Profesor.js";
 
 // Variables
+/**
+ * Centro
+ * @type {Centro}
+ */
 let centro;
+
+/**
+ * Array de profesores
+ * @type {Profesor[]}
+ */
 let profesores = [];
+
+/**
+ * Array de alumnos
+ * @type {Alumno[]}
+ */
 let alumnos = [];
+
+/**
+ * Array de grupos
+ * @type {Grupo[]}
+ */
 let grupos = [];
 
-// Generación de profesores
+/**
+ * Función para generar profesores y añadirlos al array de profesores
+ * @function
+ * @param {Profesor[]} aProfesores Array de profesores donde se añadirán los profesores generados
+ * @param {number} nProfesores Número de profesores que se generarán
+ * @param {string} prefijo Prefijo para el nombre que tendrán los profesores
+ * @return {void}
+ */
 function generarProfesores(aProfesores, nProfesores, prefijo = "Profesor") {
   // Intento crear los profesores
   try {
     for (let i = 1; i <= nProfesores; i++) {
       aProfesores.push(
         new Profesor(
-          prefijo + i,
+          prefijo + Math.floor(Math.random() * 100),
           getRandomDate(),
           getRandomSpecialization(especialidades),
           Math.floor(Math.random() * (35 - 1) + 1)
@@ -31,20 +61,28 @@ function generarProfesores(aProfesores, nProfesores, prefijo = "Profesor") {
   }
 }
 
-// Generación de alumnos
+/**
+ * Función para generar alumnos y añadirlos al array de alumnos
+ * @function
+ * @param {Alumno[]} aAlumnos Array de alumnos donde se añadirán los alumnos generados
+ * @param {number} nAlumnos Número de alumnos que se generarán
+ * @param {string} prefijo Prefijo para el nombre que tendrán los alumnos
+ * @return {void}
+ */
 function generarAlumnos(aAlumnos, nAlumnos, prefijo = "Alumno") {
   try {
     for (let i = 1; i <= nAlumnos; i++) {
       let fechaNac = getRandomDate();
       aAlumnos.push(
         new Alumno(
-          prefijo + i,
+          prefijo + Math.floor(Math.random() * 100),
           fechaNac,
           Math.floor(
             // Un alumno no se puede matricular antes de nacer
             Math.random() * (2022 - fechaNac.getFullYear()) +
               fechaNac.getFullYear()
           ),
+          // Imagen aleatoria (desde una api de pokemons porque todo es mejor con pokemons)
           `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${Math.floor(
             Math.random() * (200 - 1) + 1
           )}.png`
@@ -56,7 +94,15 @@ function generarAlumnos(aAlumnos, nAlumnos, prefijo = "Alumno") {
   }
 }
 
-// Generación de grupos
+/**
+ * Función para generar grupos y añadirlos al array de grupos
+ * @function
+ * @param {Grupo[]} aGrupos Array de grupos donde se añadirán los grupos generados
+ * @param {number} nGrupos Número de Grupos que se generarán
+ * @param {string} prefijo Prefijo para el nombre que tendrán los grupos
+ * @param {string} abrev Prefijo que tendrá la abreviatura del grupo generado
+ * @return {void}
+ */
 function generarGrupos(
   aGrupos,
   nGrupos,
@@ -66,14 +112,19 @@ function generarGrupos(
 ) {
   try {
     for (let i = 1; i <= nGrupos; i++) {
-      aGrupos.push(new Grupo(prefijo + i, abrev + 1, tAlumnos));
+      aGrupos.push(new Grupo(prefijo + i, abrev + i, tAlumnos));
     }
   } catch (error) {
     console.log(error);
   }
 }
 
-// Añadir alumnos a los grupos (se reparten a partes iguales+)
+/**
+ * Función para repartir los alumnos en grupos a partes iguales
+ * @function
+ * @param {Grupo[]} aGrupos Array de grupos
+ * @param {Alumno[]} aAlumnos Array de alumnos
+ */
 function addAlumnos(aGrupos, aAlumnos) {
   let alumnosPorGrupo =
     aGrupos.length > 0 ? Math.floor(aAlumnos.length / aGrupos.length) : 0;
@@ -109,7 +160,13 @@ generarGrupos(grupos, 2, 20);
 addAlumnos(grupos, alumnos);
 
 // Para comprobar que funciona el método ordenar
-//grupos[0].altaAlumno(new Alumno("Abecedio", "08-19-1994", 1999, "foto"));
+/*
+try{
+  grupos[0].altaAlumno(new Alumno("Abecedio", "08-19-1994", 1999, "foto"));
+} catch (error) {
+  console.log(error);
+}
+*/
 
 // Ordenando alumnos por nombre
 for (let grupo in grupos) {

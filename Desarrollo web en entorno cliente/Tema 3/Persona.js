@@ -1,14 +1,34 @@
 "use strict";
+/**
+ * @module Persona
+ */
 
-// Clase principal
+/**
+ * @class Clase que representa a una persona
+ * @public
+ */
 export class Persona {
-  // Propiedades
+  /**
+   * Nombre y apellidos
+   * @type {string}
+   * @private
+   */
   #nomApe;
+
+  /**
+   * Fecha de nacimiento
+   * @type {Date}
+   * @private
+   */
   #fechaNac;
 
-  // Constructor
+  /**
+   * @constructor
+   * @param {string} nomApe Nombre y apellidos
+   * @param {string} fechaNac Fecha de nacimiento (será convertida a un objeto Date)
+   * @throws {string} Si el nombre no es una cadena o si la fecha es ivalida o anterior a 01-01-1963 o posterior a 31-12-2022
+   */
   constructor(nomApe, fechaNac) {
-    // Realizando comprobaciones y lanzando errores
     if (typeof nomApe !== "string" || nomApe.length < 5) {
       throw "Error: el nombre y los apellidos debe ser una cadena y tener mínimo 5 caracteres";
     }
@@ -21,27 +41,49 @@ export class Persona {
       throw "Error: La fecha debe estar comprendida entre el 01 enero 1963 y el 31 Diciembre 2022";
     }
 
-    // Asignando valores
     this.#fechaNac = new Date(fechaNac);
     this.#nomApe = nomApe;
   }
 
-  // Getters
+  /**
+   * Getter de nomApe
+   * @function
+   * @returns {string} Nombre y apellidos
+   */
   get nomApe() {
     return this.#nomApe;
   }
 
+  /**
+   * Getter de fechaNac
+   * @function
+   * @returns {Date} Fecha de nacimiento
+   */
   get fechaNac() {
     return this.#fechaNac;
   }
 
-  // Setters
+  /**
+   * Setter de nomApe
+   * @function
+   * @param {string} nomApe Nombre y apellidos
+   * @throws {string} Si el nombre no es una cadena o es inferior a 5 caracteres
+   * @returns {void}
+   */
   set nomApe(nomApe) {
     if (typeof nomApe !== "string" || nomApe.length < 5) {
       throw "Error: el nombre y los apellidos debe ser una cadena y tener mínimo 5 caracteres";
     }
     this.#nomApe = nomApe;
   }
+
+  /**
+   * Setter de fechaNac
+   * @function
+   * @param {string} fechaNac Fecha de nacimiento
+   * @throws {string} Si la fecha es anterior a 01-01-1963 o posterior a 31-12-2022
+   * @returns {void}
+   */
   set fechaNac(fechaNac) {
     if (
       fechaNac < new Date("1963-01-01") ||
@@ -52,7 +94,10 @@ export class Persona {
     this.#fechaNac = new Date(fechaNac);
   }
 
-  // Métodos
+  /**
+   * Método que transforma los datos de la clase a un formato presentable
+   * @returns {string} Tabla html
+   */
   toString() {
     const options = {
       weekday: "long",
