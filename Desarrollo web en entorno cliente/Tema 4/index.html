@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad 4 - Formulario de inscripción</title>
+  </head>
+  <body>
+    <form>
+      <div>
+        <input placeholder="Nombre y apellidos" id="nomApe" />
+        <span id="nomApeError"></span>
+      </div>
+      <div>
+        <input placeholder="Edad" type="number" id="edad" />
+        <span id="edadError"></span>
+      </div>
+      <input placeholder="Contraseña" type="password" id="pass" />
+      <div>
+        <input type="radio" name="estado" id="soltero" value="soltero" />
+        <label for="soltero">Soltero</label>
+        <input type="radio" name="estado" id="casado" value="casado" />
+        <label for="casado">Casado</label>
+        <input type="radio" name="estado" id="viudo" value="viudo" />
+        <label for="viudo">Viudo</label>
+        <input type="radio" name="estado" id="separado" value="separado" />
+        <label for="separado">Separado</label>
+        <input type="radio" name="estado" id="unionLibre" value="unionLibre" />
+        <label for="unionLibre">Union libre</label>
+      </div>
+      <div>
+        <input type="checkbox" name="manzana" id="manzana" />
+        <label for="manzana">Manzana</label>
+
+        <input type="checkbox" name="platano" id="platano" />
+        <label for="platano">Plátano</label>
+        <input type="checkbox" name="pera" id="pera" />
+        <label for="pera">Pera</label>
+        <input type="checkbox" name="naranja" id="naranja" />
+        <label for="naranja">Naranja</label>
+        <input type="checkbox" name="uvas" id="uvas" />
+        <label for="uvas">Uvas</label>
+        <input type="checkbox" name="frutaExotica" id="frutaExotica" />
+        <label for="frutaExotica">Frutas exoticas</label>
+        <input type="checkbox" name="noConsume" id="noConsume" />
+        <label for="noConsume">No consume</label>
+      </div>
+
+      <select name="fruta">
+        <option value="" selected>Seleccione una opción</option>
+        <option value="cara">Cara</option>
+        <option value="barata">Barata</option>
+        <option value="aceptable">Aceptable</option>
+      </select>
+
+      <input type="checkbox" name="estudioMercado" id="estudio" />
+      <label for="estudioMercado"
+        >¿Acepta el uso de sus respuestas para estudios de merdado?</label
+      >
+
+      <button>Reestablecer</button>
+      <button>Enviar</button>
+    </form>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
