@@ -5,6 +5,11 @@ export class Validate {
     );
   }
   age(number) {
-    return /^(1[8-9]){1}|([2-5][0-9]){1}|(6[0-7]){1}$/.test(number);
+    return /^(1[8-9])$|^([2-5][0-9])$|^(6[0-7])$/.test(number);
+  }
+  pass(string) {
+    return /^[aeiou](?!.select)(?=.[13579])(?=.[$&@#])(?=.[A-Z]).{5,12}$/.test(
+      string
+    );
   }
 }
