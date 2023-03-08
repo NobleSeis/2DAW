@@ -10,18 +10,23 @@ document.querySelector("#nomApe").addEventListener("blur", (e) => {
   const el = document.querySelector("#nomApeError");
   // Si valida capitalizo la entrada
   if (validator.text(e.target.value)) {
-    const values = [];
+    // Separo las palabras de la entrada y las guardo capitalizadas en un array
+    const words = [];
     e.target.value.split(" ").forEach((word, index) => {
-      values[index] = `${word.charAt(0).toUpperCase()}${word.slice(1)}`;
+      words[index] = `${word.charAt(0).toUpperCase()}${word.slice(1)}`;
     });
-    e.target.value = values.join(" ");
+
+    // Uno el array y se lo asigno al value del input
+    e.target.value = words.join(" ");
 
     // Si es valido quito el error
-    el.classList.add("d-none");
+    e.target.classList.add("is-valid");
+    e.target.classList.remove("is-invalid");
 
-    // Sino valida muestro el error
+    // Sino es valido muestro el error
   } else {
-    el.classList.remove("d-none");
+    e.target.classList.remove("is-valid");
+    e.target.classList.add("is-invalid");
   }
 });
 
@@ -29,11 +34,11 @@ document.querySelector("#nomApe").addEventListener("blur", (e) => {
 document.querySelector("#edad").addEventListener("input", (e) => {
   const el = document.querySelector("#edadError");
   if (validator.age(e.target.value)) {
-    e.target.style.color = "green";
-    el.classList.add("d-none");
+    e.target.classList.add("is-valid");
+    e.target.classList.remove("is-invalid");
   } else {
-    e.target.style.color = "red";
-    el.classList.remove("d-none");
+    e.target.classList.remove("is-valid");
+    e.target.classList.add("is-invalid");
   }
 });
 
@@ -42,8 +47,10 @@ document.querySelector("#pass").addEventListener("input", (e) => {
   const el = document.querySelector("#passError");
 
   if (validator.pass(e.target.value)) {
-    el.classList.add("d-none");
+    e.target.classList.add("is-valid");
+    e.target.classList.remove("is-invalid");
   } else {
-    el.classList.remove("d-none");
+    e.target.classList.remove("is-valid");
+    e.target.classList.add("is-invalid");
   }
 });

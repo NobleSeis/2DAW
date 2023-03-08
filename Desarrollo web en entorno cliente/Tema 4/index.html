@@ -19,28 +19,37 @@
         <p>Validar un formulario en el lado del cliente</p>
       </div>
 
-      <form class="row g-3 mt-5">
+      <form class="row g-3 my-5">
         <div class="col-md-4">
           <label for="nomApe">Nombre y apellidos:</label>
-          <input placeholder="Nombre y apellidos" id="nomApe" />
-          <br />
-          <span id="nomApeError" class="badge text-white bg-danger d-none">
+          <input
+            placeholder="Nombre y apellidos"
+            id="nomApe"
+            class="form-control"
+          />
+          <span id="nomApeError" class="invalid-feedback">
             Nombre y apellidos no válidos
           </span>
         </div>
         <div class="col-md-4">
           <label for="edad">Edad: </label>
-          <input placeholder="Edad" type="number" id="edad" />
-          <br />
-          <span id="edadError" class="badge text-white bg-danger d-none">
-            Edad no válida
-          </span>
+          <input
+            placeholder="Edad"
+            type="number"
+            id="edad"
+            class="form-control"
+          />
+          <span id="edadError" class="invalid-feedback"> Edad no válida </span>
         </div>
         <div class="col-md-4">
           <label for="pass">Contraseña: </label>
-          <input placeholder="Contraseña" type="password" id="pass" />
-          <br />
-          <span id="passError" class="badge text-white bg-danger d-none">
+          <input
+            placeholder="Contraseña"
+            type="password"
+            id="pass"
+            class="form-control"
+          />
+          <span id="passError" class="invalid-feedback">
             La contraseña no cumple los requisitos
           </span>
         </div>
@@ -61,38 +70,101 @@
           />
           <label for="unionLibre">Union libre</label>
         </div>
-        <div>
-          <input type="checkbox" name="manzana" id="manzana" />
-          <label for="manzana">Manzana</label>
+        <div class="form-group">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="manzana"
+              id="manzana"
+            />
+            <label class="form-check-label" for="manzana"> Manzana </label>
+          </div>
 
-          <input type="checkbox" name="platano" id="platano" />
-          <label for="platano">Plátano</label>
-          <input type="checkbox" name="pera" id="pera" />
-          <label for="pera">Pera</label>
-          <input type="checkbox" name="naranja" id="naranja" />
-          <label for="naranja">Naranja</label>
-          <input type="checkbox" name="uvas" id="uvas" />
-          <label for="uvas">Uvas</label>
-          <input type="checkbox" name="frutaExotica" id="frutaExotica" />
-          <label for="frutaExotica">Frutas exoticas</label>
-          <input type="checkbox" name="noConsume" id="noConsume" />
-          <label for="noConsume">No consume</label>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="Platano"
+              id="platano"
+            />
+            <label class="form-check-label" for="platano"> Plátano </label>
+          </div>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="pera"
+              id="pera"
+            />
+            <label class="form-check-label" for="pera"> Pera </label>
+          </div>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="naranja"
+              id="naranja"
+            />
+            <label class="form-check-label" for="naranja"> Naranja </label>
+          </div>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="uvas"
+              id="uvas"
+            />
+            <label class="form-check-label" for="uvas"> Uvas </label>
+          </div>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="frutas exoticas"
+              id="frutasExoticas"
+            />
+            <label class="form-check-label" for="frutasExoticas">
+              Frutas exóticas
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="no consume"
+              id="noConsume"
+            />
+            <label class="form-check-label" for="noConsume"> No consume </label>
+          </div>
         </div>
 
-        <select name="fruta">
+        <select id="precioFruta" class="form-select">
           <option value="" selected>Seleccione una opción</option>
           <option value="cara">Cara</option>
           <option value="barata">Barata</option>
           <option value="aceptable">Aceptable</option>
         </select>
 
-        <input type="checkbox" name="estudioMercado" id="estudio" />
-        <label for="estudioMercado"
-          >¿Acepta el uso de sus respuestas para estudios de merdado?</label
-        >
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="estudio"
+            id="estudio"
+          />
+          <label for="estudio">
+            ¿Acepta el uso de sus respuestas para estudios de merdado?
+          </label>
+        </div>
 
-        <button>Reestablecer</button>
-        <button>Enviar</button>
+        <button class="btn btn-warning">Reestablecer</button>
+        <button class="btn btn-success">Enviar</button>
       </form>
     </div>
 
