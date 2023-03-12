@@ -19,7 +19,7 @@
         <p>Validar un formulario en el lado del cliente</p>
       </div>
 
-      <form class="row g-3 my-5">
+      <form class="row g-3 my-5" id="myForm">
         <div class="col-md-4">
           <label for="nomApe">Nombre y apellidos:</label>
           <input
@@ -73,8 +73,9 @@
         <div class="form-group">
           <div class="form-check">
             <input
-              class="form-check-input"
+              class="form-check-input fruta"
               type="checkbox"
+              name="fruta"
               value="manzana"
               id="manzana"
             />
@@ -83,8 +84,9 @@
 
           <div class="form-check">
             <input
-              class="form-check-input"
+              class="form-check-input fruta"
               type="checkbox"
+              name="fruta"
               value="Platano"
               id="platano"
             />
@@ -93,8 +95,9 @@
 
           <div class="form-check">
             <input
-              class="form-check-input"
+              class="form-check-input fruta"
               type="checkbox"
+              name="fruta"
               value="pera"
               id="pera"
             />
@@ -103,8 +106,9 @@
 
           <div class="form-check">
             <input
-              class="form-check-input"
+              class="form-check-input fruta"
               type="checkbox"
+              name="fruta"
               value="naranja"
               id="naranja"
             />
@@ -113,8 +117,9 @@
 
           <div class="form-check">
             <input
-              class="form-check-input"
+              class="form-check-input fruta"
               type="checkbox"
+              name="fruta"
               value="uvas"
               id="uvas"
             />
@@ -123,8 +128,9 @@
 
           <div class="form-check">
             <input
-              class="form-check-input"
+              class="form-check-input fruta"
               type="checkbox"
+              name="fruta"
               value="frutas exoticas"
               id="frutasExoticas"
             />
@@ -137,6 +143,7 @@
             <input
               class="form-check-input"
               type="checkbox"
+              name="fruta"
               value="no consume"
               id="noConsume"
             />
@@ -162,10 +169,13 @@
             ¿Acepta el uso de sus respuestas para estudios de merdado?
           </label>
         </div>
-
-        <button class="btn btn-warning">Reestablecer</button>
-        <button class="btn btn-success">Enviar</button>
       </form>
+      <div class="mb-5">
+        <button class="btn btn-warning" id="reset">Reestablecer</button>
+        <button class="btn btn-success" id="enviar">Enviar</button>
+      </div>
+
+      <div id="resultados" class="my-5 p-5 bg-warning d-none"></div>
     </div>
 
     <!-- Scripts -->
